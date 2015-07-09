@@ -43,7 +43,10 @@
 
     <adminhtml_system_config_edit>
         <reference name="head">
-            <action method="addJs"><script>onepica/region-depends.js</script></action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>onepica/js/region-depends.js</name>
+            </action>
         </reference>
     </adminhtml_system_config_edit>
 </layout>
