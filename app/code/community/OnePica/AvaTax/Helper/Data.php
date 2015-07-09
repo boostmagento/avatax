@@ -344,6 +344,17 @@ class OnePica_AvaTax_Helper_Data extends Mage_Core_Helper_Abstract
     }
 
     /**
+     * Retrieve business identification number
+     *
+     * @param int|Mage_Core_Model_Store $store
+     * @return string
+     */
+    public function getBusinessIdentificationNumber($store = null)
+    {
+        return $this->_getConfig('business_identification_number', $store);
+    }
+
+    /**
      * Adds error message if there is an error
      *
      * @param null|bool|int|Mage_Core_Model_Store $store
