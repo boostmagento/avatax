@@ -119,7 +119,6 @@ abstract class OnePica_AvaTax_Model_Avatax_Abstract extends OnePica_AvaTax_Model
     {
         $storeId = $object->getStoreId();
         $this->_setCompanyCode($storeId);
-        $this->_getBusinessIdentificationNo($storeId);
         $this->_request->setBusinessIdentificationNo($this->_getBusinessIdentificationNo($storeId));
         $this->_request->setDetailLevel(DetailLevel::$Document);
         $this->_request->setDocDate(date('Y-m-d'));
