@@ -232,13 +232,14 @@ abstract class OnePica_AvaTax_Model_Avatax_Abstract extends OnePica_AvaTax_Model
      */
     protected function _newAddress($line1, $line2, $city, $state, $zip, $country = 'USA')
     {
+        // force string type because hash key generation uses serialize() in Estimate.php
         $address = new Address();
-        $address->setLine1($line1);
-        $address->setLine2($line2);
-        $address->setCity($city);
-        $address->setRegion($state);
-        $address->setPostalCode($zip);
-        $address->setCountry($country);
+        $address->setLine1((string) $line1);
+        $address->setLine2((string) $line2);
+        $address->setCity((string) $city);
+        $address->setRegion((string) $state);
+        $address->setPostalCode((string) $zip);
+        $address->setCountry((string) $country);
         return $address;
     }
 
